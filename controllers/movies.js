@@ -5,7 +5,9 @@ const NotFoundError = require('../errors/not-found-error-404');
 
 // Получаем все фильмы
 module.exports.getMovies = (req, res, next) => {
-  Movie.find({})
+  const ownerId = req.user._id;
+
+  Movie.find({ ownerId })
     .then((movies) => res.send(movies))
     .catch(next);
 };

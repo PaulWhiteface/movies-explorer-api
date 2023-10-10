@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const auth = require('./middlewares/auth');
 const cors = require('./middlewares/corsHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const limiter = require('./middlewares/rateLimiter');
 const errorHandler = require('./middlewares/error');
 const NotFoundError = require('./errors/not-found-error-404');
 
@@ -17,6 +18,7 @@ mongoose.connect(DB_URL);
 
 app.use(helmet());
 app.use(cors);
+app.use(limiter);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
