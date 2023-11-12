@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://movie.whiteface.nomoredomainsrocks.ru',
-  'http://movie.whiteface.nomoredomainsrocks.ru',
+  'https://movie.whiteface.nomoredomainsmonster.ru',
+  'http://movie.whiteface.nomoredomainsmonster.ru',
   'http://localhost:3001',
 ];
 
